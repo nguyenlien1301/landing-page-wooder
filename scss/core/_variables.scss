@@ -1,0 +1,157 @@
+:root {
+    --main-color: #bea67c;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --gray-color: #464646;
+
+    --light-blue-cl: #4285F4;
+    --dark-blue-cl: #3C5A99;
+    --red-color: red;
+
+    --gap: 28px;
+    --mw-page: 2560px;
+    --mw-container-fluid: 1920px;
+    --mw-container: calc(1196px + var(--gap) * 2);
+    // font
+    --fz-h1: 8.4rem;
+    --lh-h1: normal;
+    --spacing-h1: 10.08px;
+
+    --fz-h2: 4.6rem;
+    --lh-h2: 5.6rem;
+    --spacing-h2: 4.6px;
+
+    --fz-h3: 1.8rem;
+    --lh-h3: 2.4rem;
+    --spacing-h3: 0.72px;
+// biến chung
+    --lh-text: normal;
+    //-fast
+    --transition: 0.4s;
+    --transition-slow: 0.2s;
+// biến button
+    --fz-btn: 1.5rem;
+    --spacing-btn: 1.5px;
+    --h-btn-signup: 38px;
+    --h-btn-tabs: 38px;
+    --h-btn-main: 48px;
+    --h-btn-controls: 34px;
+    --h-btn-watch: 44px;
+// biến button form google facebook
+    --text-social: 1.5rem;
+    --spacing-social: 1.5rem;
+    --h-social: 48px;
+    // biến chiều cao input forn
+    --h-input: 47px;
+    // biến menu
+    --fz-menu: 1.5rem;
+    --spacing-menu: 1.5px;
+    --pd-menu: 20px;
+// biến text body
+    --font-regular: prore;
+    --fz-body-text: 1.8rem;
+    --lh-body-text: 2.5rem;
+    --spacing-body: 0.36px;
+// text copyright và check foprrm
+    --fz-text-small: 1.4rem;
+    --spacing-text-small: 0.56px;
+// 
+    --font-extrabld: proex;
+    --font-bold: probo;
+    // chiều cao header và footer
+    --height-header: 90px;
+    --height-footer: 100px;
+    // số trang hero
+    --fz-number: 3.8rem;
+    --spacing-number: 2.28px;
+    // padding section
+    --pd-section: 120px;
+    // padding textbox product
+    --pd-txb: 74px;
+    // max-width textbox
+    --mw-txb: 482px;
+    // animation line product
+    --bottom-anima: 25px;
+    // biến icon hambuger
+    --width-hambuger: 24px;
+    --top: 9px;
+    // padding banner
+    --pd-banner: 186px;
+    // reponsive
+    @include maxW(1050px) {
+        --height-header: 80px;
+    }
+    @include maxW(1258px) {
+        --pd-menu: 15px;
+    }
+    @include md {
+        --mw-container: 1140px;
+        --pd-menu: 9px;
+    }
+
+    @include sm {
+        --mw-container: 960px;
+        --pd-section: 90px;
+        --fz-menu: 1.8rem;
+        --spacing-menu: 1.44px;
+        --h-btn-signup: 36px;
+        // --fz-btn: 1.8rem;
+        --pd-txb: initial;
+        --pd-menu: 9px;
+        // --fz-language: 1.5rem;
+        --gap: 22px;
+        --pd-banner: 150px;
+    }
+
+    @include xs {
+        --mw-container: 720px;
+        --gap: 10px;
+        --height-header: 64px;
+        --height-footer: 92px;
+
+        --fz-h1: 5.6rem;
+        --spacing-h1: 4.48px;
+
+        --fz-h2: 3.8rem;
+        --lh-h2: 4.2rem;
+        --spacing-h2: 1.52px;
+
+        --fz-h3: 1.6rem;
+        --lh-h3: 2.2rem;
+        --spacing-h3: 0.64px;
+
+        --fz-btn: 1.2rem;
+        --spacing-btn: 1.2px;
+        --h-btn-main: 36px;
+        --h-btn-watch: 36px;
+        --h-btn-tabs: 28px;
+
+        --h-btn-controls: 27px;
+
+        --fz-body-text: 1.5rem;
+        --lh-body-text: 2rem;
+        --spacing-body: 0.6px;
+
+        --fz-text-small: 1.2rem;
+        --spacing-text-small: 0.48px;
+        --pd-section: 60px;
+        --pd-txb: initial;
+        // --mw-txb: 330px;
+        --bottom-anima: 17px;
+        --fz-text-menu: 1.8rem;
+        --spacing-text-menu: 1.44px;
+        --height-btn-mobile: 38px;
+        --pd-banner: 77px;
+    }
+    
+    @include xxs {
+        --mw-container: 100%;
+        --width-hambuger: 20px;
+        --top: 8px;
+        --h-input: 40px;
+        --h-social: 36px;
+    }
+    @include xxxs {
+        --fz-text-form: 13px; 
+    }
+}

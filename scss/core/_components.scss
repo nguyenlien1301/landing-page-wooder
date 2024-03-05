@@ -1,0 +1,161 @@
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: block;
+    outline: 0;
+    object-fit: contain;
+
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: var(--black-color);
+    outline: 0;
+    display: block;
+}
+
+strong {
+    font-family: var(--font-bold);
+}
+
+.--hidden {
+    display: none;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.heading {
+    font-family: var(--font-bold);
+    color: var(--black-color);
+    text-transform: uppercase;
+    &.--h1 {
+        font-size: var(--fz-h1);
+        line-height: var(--lh-h1);
+        color: var(--main-color);
+        letter-spacing: var(--spacing-h1);
+        margin-bottom: 18px;
+    }
+
+    &.--h2 {
+        font-size: var(--fz-h2);
+        line-height: var(--lh-h2);
+        letter-spacing: var(--spacing-h2);
+        margin-bottom: 12px;
+    }
+
+    &.--h3 {
+        font-size: var(--fz-h3);
+        line-height: var(--lh-h3);
+        letter-spacing: var(--spacing-h3);
+    }
+    &.--yellow-color {
+        color: var(--main-color);
+    }
+    @include xs {
+        &.--h1 {
+            margin-bottom: 10px;
+        }
+        &.--h2 {
+            margin-bottom: 10px;
+        }
+    }
+}
+.--white-color {
+    color: var(--white-color);
+}
+
+.text-small {
+    font-size: var(--fz-text-small);
+    line-height: var(--lh-text);
+    letter-spacing: var(--spacing-text-small);
+}
+
+.textbox {
+    &.--align-center{
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+.buttons__more {
+    width: fit-content;
+    @include middle(true);
+    gap: 8px;
+    font-family: var(--font-bold);
+    font-size: var(--fz-btn);
+    letter-spacing: var(--spacing-btn);
+    line-height: var(--lh-text);
+    text-transform: uppercase;
+    margin-top: 24px;
+    position: relative;
+    &-icon {
+        @include transition(var(--transition));
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        left: 0;
+        bottom: -8px;
+        background-color: var(--main-color);
+        @include transition(var(--transition));
+    }
+    &:hover {
+        &::after {
+            width: calc(100% - 30px);
+        }
+        .buttons__more-icon {
+            @include transform(translateX(12px));
+        }
+    }
+    @include xs {
+        &::after {
+            width: 28px;
+            bottom: -7px;
+        }
+        &-icon {
+            width: 17px;
+            height: 6px;
+        }
+    }
+    @include xxxs {
+        margin-top: 18px;
+    }
+}
+
+.btnyellow {
+    width: fit-content;     
+    height: var(--h-btn-signup);
+    padding: 0 18px;
+    background-color: var(--main-color);
+    cursor: pointer;
+    border: 1px solid transparent;
+    @include transition(var(--transition));
+    @include middle(true);
+    &:hover {
+        background-color: transparent;
+        border: 1px solid var(--white-color);
+    }
+}
+
+.--text-btn {
+    @include textHeader;
+}

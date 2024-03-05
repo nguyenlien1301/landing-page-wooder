@@ -1,0 +1,76 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    &.--disable-scroll {
+        overflow: hidden;
+    }
+    body {
+        width: 100%;
+        max-width: var(--mw-page);
+        margin: 0 auto;
+        line-height: var(--lh-body-text);
+        letter-spacing: var(--spacing-body);
+        font-size: var(--fz-body-text);
+        font-family: var(--font-regular);
+        color: var(--gray-color);
+        &.--is-loaded {
+            height: auto;
+            overflow: initial;
+            .loading {
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                -webkit-transition: var(--transition);
+            }
+        }
+        .container-fluid {
+            width: 100%;
+            max-width: var(--mw-container-fluid);
+            padding-right: var(--gap);
+            padding-left: var(--gap);
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .container {
+            width: 100%;
+            max-width: var(--mw-container);
+            padding-right: var(--gap);
+            padding-left: var(--gap);
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+            @include md {
+                max-width: var(--mw-container);
+            }
+        }
+        .main {
+            position: relative;
+            section {
+                &.--ptb {
+                    padding: var(--pd-section) 0;
+                }
+    
+                &.--pt {
+                    padding-top: var(--pd-section)
+                }
+    
+                &.--pb {
+                    padding-bottom: var(--pd-section)
+                }
+            }
+        }
+    }
+
+    @include xs {
+        font-size: 62.5%;
+        .container-fluid,
+        .container {
+            padding-right: calc(var(--gap) + 5px);
+            padding-left: calc(var(--gap) + 5px);
+        }
+    }
+    @include sm {
+        font-size: 58%;
+    }
+}

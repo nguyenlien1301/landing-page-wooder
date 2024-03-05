@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOODER - CFD Circle</title>
+    <meta name="title" content="CFD Circle" />
+    <meta name="description" content="" />
+    <meta name="keyword" content=""/>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="canonical" href="https://cfdcircle.vn" />
+    <!-- meta tag facebook -->
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="CFD Circle" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="CFD Circle" />
+    <!-- meta twitter hỗ trợ những nước thịnh hành twitter -->
+    <meta name="twitter:card" content="" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <style>
+        /* page loading */
+        .loading {
+            width: 100%;
+            height: 100vh;
+            background-color: var(--black-color);
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+        }
+        .loading.--is-loaded {
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s;
+            -webkit-transition: 0.4s;
+        }
+        .loading .loading__page {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .loading .loading__page .loading__page-progress {
+            width: 160px;
+            height: 4px;
+            background-color: var(--white-color);
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }  
+        .loading .loading__page .loading__page-progress .loading__progress {
+            position: absolute;
+            width: 0;
+            height: inherit;
+            background-color: var(--main-color);
+        }
+        .loading .loading__page .loading__page-percent {
+            margin-top: 17px;
+        }
+    </style>
+    <link rel="stylesheet" href="./dest/style.min.css" />
+    <link rel="stylesheet" href="./dest/fonts.css" />
+</head>
+<body class="homepage --disable-scroll">
+    <div class="loading">
+        <div class="loading__page">
+            <div class="loading__page-progress">
+                <div class="loading__progress"></div>
+            </div>
+            <div class="loading__page-percent --text-btn"></div>
+        </div>
+    </div>
+    <div class="progressbar"></div>
+    <header class="header">
+        <div class="container-fluid">
+            <a href="./" class="header__logo">
+                <img src="./img/logo-wooder.svg" alt="wooder" class="header__logo-img">
+                <h1 style="display: none;">Wooder</h1>
+            </a>
+            <nav class="header__nav">
+                <ul class="header__nav-menu">
+                    <li><a href="#schome" class="active">home</a></li>
+                    <li><a href="#scproduct">products</a></li>
+                    <li><a href="#scvideos">videos</a></li>
+                    <li><a href="#scservises">servises</a></li>
+                    <li><a href="#scabout">about</a></li>
+                    <li><a href="#scgallery">gallery</a></li>
+                    <li><a href="#scnews">news</a></li>
+                    <li class="signup__mobile btnyellow --text-btn">Sign Up</li>
+                </ul>
+            </nav>
+            <div class="header__cta">
+                <div class="header__cta-language">
+                    <div class="current">
+                        <span class="current__text --text-btn">EN</span>
+                        <img src="./img/dropdown.svg" alt="wooder" class="current__icon">
+                    </div>
+                    <ul class="dropdown">
+                        <li>VI</li>
+                        <li>JP</li>
+                        <li>AU</li>
+                    </ul>
+                </div>
+                <button class="header__cta-signup btnyellow --text-btn">Sign Up</button>
+                <div class="header__cta-hambuger">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section id="schome" class="hero">
+            <div class="hero__slider">
+                <div class="hero__slider-items">
+                    <div class="content">
+                        <h2 class="heading --h1">wooder</h2>
+                        <a href="#" class="button__main --text-btn">learn more
+                            <svg width="21" height="7" viewBox="0 0 21 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.4066 3.47129L0.654187 3.47129M16.2015 6.36841L20.0076 3.47129L16.2015 0.57417" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>       
+                        </a>
+                    </div>
+                    <picture class="content__slider">
+                        <source media="(max-width: 767px)" srcset="./img/slider1-mobile.jpg">
+                        <source media="(max-width: 992px)" srcset="./img/slider1-tablet.jpg">
+                        <img src="./img/slider1.jpg" alt="wooder" class="content__slider-img">
+                    </picture>
+                </div>
+                <div class="hero__slider-items">
+                    <div class="content">
+                        <h2 class="heading --h1">furniture</h2>
+                        <a href="#" class="button__main --text-btn">learn more
+                            <svg width="21" height="7" viewBox="0 0 21 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.4066 3.47129L0.654187 3.47129M16.2015 6.36841L20.0076 3.47129L16.2015 0.57417" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg> 
+                        </a>
+                    </div>
+                    <picture class="content__slider">
+                        <source media="(max-width: 767px)" srcset="./img/slider2-mobile.jpg">
+                        <source media="(max-width: 992px)" srcset="./img/slider2-tablet.jpg">
+                        <img src="./img/slider2.jpg" alt="wooder" class="content__slider-img">
+                    </picture>
+                </div>
+                <div class="hero__slider-items">
+                    <div class="content">
+                        <h2 class="heading --h1">decor</h2>
+                        <a href="#" class="button__main --text-btn">learn more
+                            <svg width="21" height="7" viewBox="0 0 21 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.4066 3.47129L0.654187 3.47129M16.2015 6.36841L20.0076 3.47129L16.2015 0.57417" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg> 
+                        </a>
+                    </div>
+                    <picture class="content__slider">
+                        <source media="(max-width: 767px)" srcset="./img/slider3-mobile.jpg">
+                        <source media="(max-width: 992px)" srcset="./img/slider3-tablet.jpg">
+                        <img src="./img/slider3.jpg" alt="wooder" class="content__slider-img">
+                    </picture>
+                </div>
+            </div>
+            <div class="hero__bottom">
+                <div class="container-fluid">
+                    <div class="hero__bottom-quantity">
+                        <div class="number">
+                            <span class="number__current">01</span>
+                            <span class="number__total"> /03</span>
+                        </div>
+                        <!-- <ol class="dots">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ol> -->
+                    </div>
+                    <div class="hero__bottom-mousedown">
+                        <img src="./img/mouse.svg" alt="wooder" class="mouse">
+                        <img src="./img/arrow-down.svg" alt="wooder" class="arrowdown">
+                    </div>
+                    <div class="hero__buttom-control controls">
+                        <button class="controls__btn --btnprev">
+                            <img src="./img/arrow-next.svg" alt="wooder" class="controls__btn-icon">
+                        </button>
+                        <button class="controls__btn --btnnext">
+                            <img src="./img/arrow-next.svg" alt="wooder" class="controls__btn-icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="scproduct" class="product --pt">
+            <div class="container">
+                <div class="product__rows">
+                    <div class="textbox">
+                        <h2 class="heading --h2">furniture</h2>
+                        <p class="desc">Wooder utilizes materials otherwise left behind, rendered useless in their original intent. By creating new pieces made one rerclaimed barnwood</p>
+                        <a href="#" class="buttons__more">lean more
+                            <img src="./img/arrow-right.svg" alt="wooder" class="buttons__more-icon">
+                        </a>
+                    </div>
+                    <div class="product__rows-thumbnail">
+                        <img src="./img/image-thumbnail1.jpg" alt="wooder" class="thumbnail__img">
+                    </div>
+                </div>
+                <div class="product__rows">
+                    <div class="textbox">
+                        <h2 class="heading --h2">decor</h2>
+                        <p class="desc">We make all types of wooden decor as per design given by Architect,Interior designer, contractor which is suitable your premises. </p>
+                        <a href="#" class="buttons__more">lean more
+                            <img src="./img/arrow-right.svg" alt="wooder" class="buttons__more-icon">
+                        </a>
+                    </div>
+                    <div class="product__rows-thumbnail">
+                        <img src="./img/image-thumbnail2.jpg" alt="wooder" class="thumbnail__img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="scvideos" class="videos --ptb">
+            <div class="container">
+                <div class="textbox --align-center">
+                    <h2 class="heading --h2">wooder - is quality</h2>
+                    <p class="desc">Wooder utilizes materials otherwise left behind, rendered useless in their original intent. By creating new pieces made rerclaimed barnwood rendered useless in their original intent.</p>
+                </div>
+                <div class="videos__list">
+                    <figure class="videos__list-items">
+                        <div class="thumb" data-video="hHpZkqk7QA0">
+                            <img src="./img/play.svg" alt="wooder" class="thumb__icon"> 
+                            <img src="./img/thumbnail-video1.jpg" alt="wooder" class="thumb__img">
+                        </div>
+                        <p class="title">Innovative Design</p>
+                    </figure>
+                    <figure class="videos__list-items">
+                        <div class="thumb" data-video="49tpj1QPvx8">
+                            <img src="./img/play.svg" alt="wooder" class="thumb__icon"> 
+                            <img src="./img/thumbnail-video2.jpg" alt="wooder" class="thumb__img">
+                        </div>
+                        <p class="title">High-level Skills</p>
+                    </figure>
+                    <figure class="videos__list-items">
+                        <div class="thumb" data-video="bdaWTOjR_Us">
+                            <img src="./img/play.svg" alt="wooder" class="thumb__icon"> 
+                            <img src="./img/thumbnail-video3.jpg" alt="wooder" class="thumb__img">
+                        </div>
+                        <p class="title">Quality Products</p>
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section id="scservises" class="banner" style="background-image: url('./img/banner.jpg')">
+            <div class="container">
+                <div class="textbox">
+                    <h2 class="heading --h2 --yellow-color">we Do the design of any complexity</h2>
+                    <p class="desc --white-color">Wooder utilizes materials otherwise left behind, rendered useless in their original intent. By creating new pieces made o.rerclaimed barnwood</p>
+                    <button class="button__watch --text-btn" data-video="F037vSugvGo">
+                        <img src="./img/play-watch.svg" alt="wooder" class="button__watch-icon">
+                        watch video
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="scabout" class="about --ptb">
+            <div class="container">
+                <div class="about__thumbnail">
+                    <img src="./img/image-about.jpg" alt="about" class="about__thumbnail-img">
+                </div>
+                <div class="textbox">
+                    <h2 class="heading --h2">about us</h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="#" class="buttons__more">lean more
+                        <img src="./img/arrow-right.svg" alt="wooder" class="buttons__more-icon">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="scgallery" class="gallery --ptb">
+            <div class="container">
+                <div class="textbox">
+                    <h2 class="heading --h2 --white-color">gallery</h2>
+                    <p class="desc --white-color">We are a team of professionals in the wood processing and 
+                        the creation of wooden furniture of the highest class
+                    </p>
+                </div>
+                <div class="gallery__list">
+                    <figure class="gallery__list-imgs">
+                       <a href="./img/image-gallery-large1.jpg" data-fancybox="images" class="thumbnail">
+                            <img src="./img/image-gallery1.jpg" alt="wooder" class="thumbnail__small">
+                       </a>
+                    </figure>
+                    <figure class="gallery__list-imgs">
+                       <a href="./img/image-gallery-large2.jpg" data-fancybox="images" class="thumbnail">
+                            <img src="./img/image-gallery2.jpg" alt="wooder" class="thumbnail__small">
+                       </a>
+                    </figure>
+                    <figure class="gallery__list-imgs">
+                       <a href="./img/image-gallery-large3.jpg" data-fancybox="images" class="thumbnail">
+                            <img src="./img/image-gallery3.jpg" alt="wooder" class="thumbnail__small">
+                       </a>
+                    </figure>
+                    <figure class="gallery__list-imgs">
+                       <a href="./img/image-gallery-large4.jpg" data-fancybox="images" class="thumbnail">
+                            <img src="./img/image-gallery4.jpg" alt="wooder" class="thumbnail__small">
+                       </a>
+                    </figure>
+                    <figure class="gallery__list-imgs">
+                       <a href="./img/image-gallery-large5.jpg" data-fancybox="images" class="thumbnail">
+                            <img src="./img/image-gallery5.jpg" alt="wooder" class="thumbnail__small">
+                       </a>
+                    </figure>
+                    
+                </div>
+            </div>
+        </section>
+        <section id="scnews" class="news --ptb">
+            <div class="container">
+                <div class="textbox">
+                    <h2 class="heading --h2">news</h2>
+                    <p class="desc">We are a team of professionals in the wood processing and 
+                        the creation of wooden furniture of the highest class
+                    </p>
+                </div>
+                <ul class="news__tabs">
+                    <li class="news__tabs-item active">all</li>
+                    <li class="news__tabs-item">technology</li>
+                    <li class="news__tabs-item">fashion</li>
+                </ul>
+                <div class="news__wrapper">
+                    <div class="news__list active">
+                        <article class="news__list-items">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/image-news1.jpg" alt="wooder" class="thumbnail__img">
+                            </a>
+                            <div class="content">
+                                <h3 class="heading --h3">
+                                    <a href="#" class="heading__detail">Where does it come from?</a>
+                                </h3>
+                                <p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literatur roots in a piece of
+                                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="news__list-items">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/image-news2.jpg" alt="wooder" class="thumbnail__img">
+                            </a>
+                            <div class="content">
+                                <h3 class="heading --h3">
+                                    <a href="#" class="heading__detail">There are many variations of passages</a>
+                                </h3>
+                                <p class="desc">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur Lorem Ipsum
+                                    is not Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="news__list-items">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/image-news3.jpg" alt="wooder" class="thumbnail__img">
+                            </a>
+                            <div class="content">
+                                <h3 class="heading --h3">
+                                    <a href="#" class="heading__detail">It is a long established
+                                        fact that a reader It has roots
+                                        in a piece of It is a long established
+                                        fact that a reader It has roots
+                                        in a piece of</a>
+                                </h3>
+                                <p class="desc">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur Lorem Ipsum
+                                    is not Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="news__list">
+                        <article class="news__list-items">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/image-news4.jpg" alt="wooder" class="thumbnail__img">
+                            </a>
+                            <div class="content">
+                                <h3 class="heading --h3">
+                                    <a href="#" class="heading__detail">Where does it come from?</a>
+                                </h3>
+                                <p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literatur roots in a piece of
+                                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="news__list-items">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/image-news5.jpg" alt="wooder" class="thumbnail__img">
+                            </a>
+                            <div class="content">
+                                <h3 class="heading --h3">
+                                    <a href="#" class="heading__detail">There are many variations of passages</a>
+                                </h3>
+                                <p class="desc">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur Lorem Ipsum
+                                    is not Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="news__list">
+                        <article class="news__list-items">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/image-news6.jpg" alt="wooder" class="thumbnail__img">
+                            </a>
+                            <div class="content">
+                                <h3 class="heading --h3">
+                                    <a href="#" class="heading__detail">Where does it come from?</a>
+                                </h3>
+                                <p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literatur roots in a piece of
+                                Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="news__list-items">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/image-news7.jpg" alt="wooder" class="thumbnail__img">
+                            </a>
+                            <div class="content">
+                                <h3 class="heading --h3">
+                                    <a href="#" class="heading__detail">There are many variations of passages</a>
+                                </h3>
+                                <p class="desc">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur Lorem Ipsum
+                                    is not Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="news__list-items">
+                            <a href="#" class="thumbnail">
+                                <img src="./img/image-news8.jpg" alt="wooder" class="thumbnail__img">
+                            </a>
+                            <div class="content">
+                                <h3 class="heading --h3">
+                                    <a href="#" class="heading__detail">It is a long established
+                                        fact that a reader It has roots
+                                        in a piece of It is a long established
+                                        fact that a reader It has roots
+                                        in a piece of</a>
+                                </h3>
+                                <p class="desc">Contrary to popular belief, Lorem Ipsum
+                                    is not simply random text. It has roots
+                                    in a piece of classical Latin literatur Lorem Ipsum
+                                    is not Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="carousel --pb">  
+            <div class="carousel__list">
+                <img src="./img/carousel1.jpg" data-flickity-lazyload="./img/carousel1.jpg" alt="wooder">
+                <img src="./img/carousel2.jpg" data-flickity-lazyload="./img/carousel2.jpg" alt="wooder">
+                <img src="./img/carousel3.jpg" data-flickity-lazyload="./img/carousel3.jpg" alt="wooder">
+                <img src="./img/carousel4.jpg" data-flickity-lazyload="./img/carousel4.jpg" alt="wooder">
+            </div>
+            <div class="carousel__progress">
+                <span class="carousel__progress-bar"></span>
+            </div>
+        </section>
+        <section class="accordion --pb">
+            <div class="container">
+                <div class="textbox --align-center">
+                    <h2 class="heading --h2"><span>Câu Hỏi </span>Thường Gặp</h2>
+                </div>
+                <div class="accordion__list">
+                    <div class="accordion__list-question">
+                        <div class="title">Thông tin chung</div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum dolor sit amet consectetur adipisicing?</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe provident similique libero architecto quaerat quas molestiae voluptatum, earum obcaecati sint tempora nulla</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus d
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum dolor sit amet consectetur adipisicing elit. In sint tempore repudiandae.</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam veniam beatae recusandae, incidunt eveniet at praesentium itaque fugit consequuntur sequi laboriosam tempora.</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Sed vel impedit nisi nemo fugiat in ipsam accusamus natus obcaecati laboriosam reiciendis vitae ex maxime labore, molestias ipsum sit. Saepe, pariatur?</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Culpa repellat veniam molestiae fugiat aliquam. Culpa quas optio delectus?</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure distinctio enim vitae dolorem, iusto provident non optio, porro sequi, earum molestiae itaque voluptate nisi magnam?</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__list-question">
+                        <div class="title">Đăng kí, thanh toán, ưu đãi</div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum dolor sit amet consectetur adipisicing elit?</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium atque dolorem maxime quis accusantium labore placeat in magnam rem qui asperiores, aliquid molestiae, deserunt soluta dolorum ipsum aut necessitatibus ut!
+                                </p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt eligendi at dolor maxime totam necessitatibus</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex debitis dicta animi? Voluptatibus perferendis aliquam dicta.?</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum dolor sit amet consectetur adipisicing elit?</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi unde quo beatae nesciunt ratione consequuntur eos asperiores necessitatibus, eius aperiam reiciendis quasi ea rem aliquid assumenda laudantium repudiandae corporis placeat?</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="content__question">
+                                <h3 class="heading --h3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam at esse repellat repudiandae voluptatem?</h3>
+                            </div>
+                            <div class="content__answer">
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium debitis tempora, quis veritatis laboriosam deleniti delectus dolores nobis! Facere recusandae minus doloremque ex consectetur necessitatibus laboriosam voluptate deserunt voluptatem quidem?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__copyright">© 2023 WOODER, CFD Circle</p>
+            <a href="./index.html" class="footer__logo">
+                <img src="./img/logo-wooder.svg" alt="wooder" class="footer__logo-img">
+            </a>
+            <button class="footer__totop">
+                <img src="./img/arrow-footer.svg" alt="wooder">
+            </button>
+        </div>
+    </footer>
+    <div class="modal">
+        <div class="modal__container">
+            <div class="modal__close">
+                <img src="./img/close.svg" alt="modal" class="modal__close-icon">
+            </div>
+            <div class="modal__header">
+                <h2 class="heading --h2">create acount</h2>
+                <div class="modal__header-button">
+                    <a href="https://cfdstudio.vn" target="_blank" class="btn --text-btn">
+                        <img src="./img/icon-google.svg" alt="google" class="btn__icon">
+                        google
+                    </a>
+                    <a href="https://www.facebook.com/groups/1093166528320644" target="_blank" class="btn --text-btn">
+                        <img src="./img/icon-facebook.svg" alt="facebook" class="btn__icon">
+                        facebook
+                    </a>
+                </div>
+                <div class="modal__header-other">
+                    <span class="text">Or register using</span>
+                </div>
+            </div>  
+            <form action="#" method="POST" id="userInfo" class="form">
+                <div class="form__group form__info">
+                    <input type="text" id="fullname" placeholder="Fullname" class="form__group-input">
+                    <span class="error"></span>
+                </div>
+                <div class="form__group form__info">
+                    <input type="email" id="email" placeholder="Email address" class="form__group-input">
+                    <span class="error"></span>
+                </div>
+                <div class="form__group form__info">
+                    <input type="text" id="username" placeholder="Username" class="form__group-input">
+                    <span class="error"></span>
+                </div>
+                <div class="form__group form__info --password">
+                    <input type="password" id="password" placeholder="Password" class="form__group-input">
+                    <div class="form__group-password">
+                        <img src="./img/icon-show-eye.svg" alt="eye" class="eye eye-show">
+                        <img src="./img/icon-hide-eye.svg" alt="eye" class="eye eye-hide">
+                    </div>
+                    <span class="error"></span>
+                </div>
+                <div class="form__group form__info">
+                    <input type="password" id="cfpassword" placeholder="Confirm Password" class="form__group-input">
+                    <div class="form__group-password">
+                        <img src="./img/icon-show-eye.svg" alt="eye" class="eye eye-show">
+                        <img src="./img/icon-hide-eye.svg" alt="eye" class="eye eye-hide">
+                    </div>
+                    <span class="error"></span>
+                </div>
+                <div class="form__group">
+                    <label for="send" class="form__group-label">
+                        <input type="checkbox" name="send" id="send" class="checkbox"> <!-- height0, w0, visibility: hidden-->
+                        <span class="checkmark"></span>
+                        <span class="text">Send me special offers, information and recommendations</span>
+                        <span class="error"></span>
+                    </label>
+                </div>
+                <button type="submit" class="submit btnyellow --text-btn">sign up</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup__container">
+            <div class="popup__container-video">
+                <div class="close">
+                    <img src="./img/close.svg" alt="close-video" class="close-icon">
+                </div>
+                <iframe width="100%" height="100%" src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" muted allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./dest/jsmain.min.js"></script>
+<script type="text/javascript" src="./dest/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+</html>
