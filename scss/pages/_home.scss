@@ -766,6 +766,7 @@
                 padding: 10px 0;
                 border-bottom: 1px solid var(--black-color);
                 margin-bottom: 20px;
+                font-family: var(--font-bold);
             }
             .content {
                 background-color: #ddd;
@@ -777,6 +778,7 @@
                     width: 100%;
                     position: relative;
                     padding: 20px;
+                    background-color: var(--main-color);
                     &::before {
                         content: '';
                         position: absolute;
@@ -803,6 +805,11 @@
                         &::after {
                             transform:translateY(-50%) rotate(90deg);
                         }
+                    }
+                    .heading {
+                        color: var(--white-color);
+                        @include transition(var(--transition));
+                        text-transform: initial;
                     }
                 }
                 &__answer {

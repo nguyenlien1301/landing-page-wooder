@@ -1,2 +1,2 @@
-.case-cache/
-cache/
+.sass-cache
+node_module
